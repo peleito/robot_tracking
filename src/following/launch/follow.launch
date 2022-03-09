@@ -1,0 +1,18 @@
+<launch>
+
+    <include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
+
+    <include file="$(find ar_track_alvar)/launch/pr2_indiv.launch"/>
+
+    <node name="get_ar" pkg="following" type="get_ar_tag.py" output="screen"/>
+
+    <node name="tag_cmd" pkg="following" type="tag_to_cmd.py" output="screen"/>
+
+    <node name="robot_arduino" pkg="rosserial_python" type="serial_node.py" output="screen">
+
+        <param name="port"  type="string"   value="/dev/ttyACM0"/>
+        <param name="baud"  type="int"      value="57600"/>
+
+    </node>
+
+</launch>

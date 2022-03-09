@@ -131,6 +131,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/team5/robot_tracking_ws/build/gtest/cmake_install.cmake")
+  include("/home/team5/robot_tracking_ws/build/ar_track_alvar/ar_track_alvar_msgs/cmake_install.cmake")
+  include("/home/team5/robot_tracking_ws/build/following/cmake_install.cmake")
+  include("/home/team5/robot_tracking_ws/build/ar_track_alvar/ar_track_alvar/cmake_install.cmake")
 
 endif()
 
